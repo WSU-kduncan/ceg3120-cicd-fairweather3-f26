@@ -173,7 +173,7 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 - Resources (just the ones from the lab):
     - `https://docs.docker.com/build/ci/github-actions/manage-tags-labels/`
     - `https://github.com/docker/metadata-action?tab=readme-ov-file#semver`
-1. **git tags created for commits:**
+1. **Git tags created for commits:**
     - How to see the tags in a git repository:
         - `git tag` lists locally stored tags, or `git tag -l` can be used to filter tags.
     - How to generate a tag in a git repository:
@@ -186,9 +186,24 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
             git push origin v1.0.0 #for a single tag
             git push origin --tags # for multiple tags that are stored locally
             ```
+
+---
+
 2. **Semantic Versioning Container Images with GitHub Actions:**
-    - Workflow Trigger
-    - Workflow Steps
+    - Workflow Trigger:
+        - The workflow should now trigger whenever a tag matching `v*.*.*` like v1.0.0 is pushed to GitHub. Other commits, such as a normal commit to `main`, will not trigger it.
+    - Workflow Steps (I'm tired of markdown tables, here's bullets)
+        1. *Checkout Repo* (`actions/checkout@v6`):
+            - Clones the repo at the tagged commit
+        2. *Docker MetaData* (`docker/metadata-action@v6`):
+            - Turns the git tag into image tags. v1.1.0 should tun into 1, 1.1, and latest.
+        3. *DockerHub Login* (`docker/login-action@v4`):
+            - Log in to DockerHub using `DOCKER_USERNAME` and `DOCKER_TOKEN` repo secrets.
+        4. *Set up Docker Build* (`docker/setup-buildx-action@v4`):
+            - Set up dockerbuildx for building 
+        5. *Build / Push* (`docker/build-push-action@v7`):
+            - builds the image from `web-content` and pushes it with the tags it makes.
+        
     - Values that need updated
     - Link to workflow file
 3. **Testing & Validation**
