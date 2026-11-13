@@ -51,6 +51,16 @@ Both HTML webpages running on `localhost:8080`
 The Docker Image is stored in this repository:
 `https://hub.docker.com/repository/docker/nfairweather93/count-up/general`
 
+With that, starting it was really easy.
+- Pull the image:
+    - `docker pull nfairweather93/count-up:latest`
+- Start the image:
+    - `docker run -d --name count-up -p 8080:80 nfairweather93/count-up:latest`
+- Verify it is running:
+    - `docker ps`
+- Check for the site on the correct port:
+    - http://localhost:8080
+
 # Part 2 - GitHub Actions and DockerHub
 
 # Part 3 - Semantic Versioning
