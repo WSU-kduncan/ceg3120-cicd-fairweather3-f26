@@ -283,9 +283,3 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
         - ![DockerHub repo with tags](./Images/dockerhub_tags.png)
     - Tags listed inside of the job in the GitHub actions tab:
         - ![Actions Tags](./Images/MoreTags.png)
-
-# Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
-
-## Images
-- [ ] Two Releases - After your second release, your DockerHub tags and digests showing that 1 and latest moved to the new image while 1.0 stayed on the old image.
-- [ ] Rollback - run containers from your `major.minor` tags and show in a browser that each server its version of the site.
