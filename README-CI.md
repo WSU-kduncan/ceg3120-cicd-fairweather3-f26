@@ -79,6 +79,12 @@ With that, starting it was really easy.
 The repo secrets are `DOCKER_USERNAME` and `DOCKER_TOKEN`. The first of those values is just my docker username, not much of a secret, the other one is the PAT that was created right before this, and then pasted into DOCKER_TOKEN as its value.
 ![Repo Secrets](./Images/RepoSecrets.png)
 
+---
+2. **GitHub Actions Stuff**
+*Really useful links to sources to help make this*
+- `https://www.telerik.com/blogs/introduction-github-actions`
+- `https://docs.github.com/en/actions/tutorials/use-containerized-services/create-a-docker-container-action`
+
 3. Set up a GitHub Actions workflow to build and push container images to your DockerHub repository.
     - Workflow shall trigger when a commit is pushed to the `main` branch (and only main)
     - Workflow shall utilize repository secrets for authentication
