@@ -68,7 +68,6 @@ With that, starting it was really easy.
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
 
 ## Images
-- [x] Local Run - `Docker ps` showing the container running, and a browser showing both of your pages with your CSS applied.
 - [ ] Repository secrets - your repository's Actions secrets page showing `DOCKER_USERNAME` and `DOCKER_TOKEN`. Secret values are not displayed, never show or commit them.
 - [ ] Main Trigger - A successful workflow run from a push to `main`, with the commit SHA visible.
 - [ ] Branch Negative Test - Push a commit to a branch other than `main`, and show the commit on that branch and that no workflow run started
