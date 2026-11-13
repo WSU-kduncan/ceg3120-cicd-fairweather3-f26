@@ -110,14 +110,19 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 | Set up Docker Buildx | `docker/setup-buildx-action@v4` | Set up Buildx, which docker can use to build the image |
 | Build / PUsh Image   | `docker/build-push-action@v7`   | Builds the image from the Dockerfile (`context: .`) and pushes it to DockerHub (with two tags set) |
 
+- **Tags added to each run:**
+    - `nfairweather93/count-up:latest`: most recent build from `main`. Should be the default from `docker pull ...`
+    - `nfairweather93/count-up:(sha)`: permanent tag named after the commit SHA. Should let every image be pointed back to the commit that built it.
+
+---
+
+### Changes in Repo
+
+a
 
 ---
 Documentation stuff to fill in
-
-2. CI with GitHub Actions
-    - Explanation of workflow trigger
-    - Explanation of workflow steps
-    - Explanation / Highlight of values that need updated if used in a different repo
+updated if used in a different repo
         - Changes in workflow
         - Changes in repo
     - Link to the Part 2 version of workflow file, using a commit permalink (file on `main` will change later)
