@@ -170,6 +170,22 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 --- 
 
 # Part 3 - Semantic Versioning
+- Resources (just the ones from the lab):
+    - `https://docs.docker.com/build/ci/github-actions/manage-tags-labels/`
+    - `https://github.com/docker/metadata-action?tab=readme-ov-file#semver`
+1. git tags created for commits:
+    - How to see the tags in a git repository:
+    - How to generate a tag in a git repository:
+    - How to push a tag in a git repository to GitHub:
+2. Semantic Versioning Container Images with GitHub Actions:
+    - Workflow Trigger
+    - Workflow Steps
+    - Values that need updated
+    - Link to workflow file
+3. Testing & Validation
+    - Test that it did tasking
+    - Verify the image in DockerHub works
+    - Link to DockerHub repo with evidence of tag being set
 
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
 
