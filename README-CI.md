@@ -61,9 +61,23 @@ With that, starting it was really easy.
 
 # Part 2 - GitHub Actions and DockerHub
 
-1. Create an appropriately scoped Personal Access Token for GitHub Actions to use and access DockerHub repository.
+### Creating a PAT for Authentication
+1. **GitHub Repo Secrets**
+- DockerHub -> Account Settings -> Personal Access Tokens -> Generate New Token
+    - Give a description (CS3120-Project6)
+    - I'm setting it to never expire
+    - Permissions = R/W
+    - Generate
+- GitHub Repo -> Settings -> Secrets and Variables -> Actions -> New Repository Secret
+    - Secret 1: `DOCKER_USERNAME`
+    - Secret 2: `DOCKER_TOKEN`
 
-2. In GitHub repo, configure GitHub Action Secrets named `DOCKER_USERNAME` and `DOCKER_TOKEN` containing DockerHub username & DockerHub access token, respectively.
+---
+
+**The repository secrets page with DOCKER_USERNAME and DOCKER_TOKEN.**
+
+The repo secrets are `DOCKER_USERNAME` and `DOCKER_TOKEN`. The first of those values is just my docker username, not much of a secret, the other one is the PAT that was created right before this, and then pasted into DOCKER_TOKEN as its value.
+![Repo Secrets](./Images/RepoSecrets.png)
 
 3. Set up a GitHub Actions workflow to build and push container images to your DockerHub repository.
     - Workflow shall trigger when a commit is pushed to the `main` branch (and only main)
@@ -73,10 +87,7 @@ With that, starting it was really easy.
 
 ---
 Documentation stuff to fill in
-1. Configure GitHub Repository Secrets:
-    - How to create a PAT for authentication (and recommend PAT scope for this project)
-    - How to set up secrets for use by GitHub actions
-    - Describe the Secrets set in this project
+
 2. CI with GitHub Actions
     - Explanation of workflow trigger
     - Explanation of workflow steps
@@ -88,7 +99,7 @@ Documentation stuff to fill in
     - How to test that the workflow did its tasking
     - How to verify that the image in DockerHub works when a container is run using the image
     - Link to DockerHub Repo
-    
+
 # Part 3 - Semantic Versioning
 
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
