@@ -15,6 +15,30 @@ Project 6 aims to automate building and publishing a containerized website (the 
 | Docker         | Defines the image that the web files can run from |
 | DockerHub      | Application holding the published images (`nfairweather93/count-up`) |
 
+## Diagram
+```mermaid
+flowchart LR
+    subgraph LOCAL["Locally cloned repo"]
+        direction TB
+        A["Edit web files"] --> B["git commit"]
+        B --> C["git push origin main"]
+        C --> D["git tag -a v1.1.0"]
+        D --> E["git push origin v1.1.0"]
+    end
+
+    subgraph GITHUB["GitHub"]
+        direction TB
+        F["Repo receives tag v1.1.0"] --> G{"Check if tag matches expected format v*.*.*"}
+        G -- No --> H["No Workflow"]
+        G -- Yes --> I["Workflow starts"]
+        I --> J["1. Checkout Repo"]
+        J --> K["2. metadata generates tags"]
+        K --> L["3. login with repo secrets"]
+        L --> M["4. sets up buildx"]
+        M --> N["5. build-push-action builds and pushes the image"]
+    end
+```
+
 # Part 1 - Create a Docker container image
 
 - The website located in [web-content](./web-content/) was "developed" using AI (Claude), as per the instructions (and is also the same one that I used in project 5). Once again, the prompt I used is as follows:
