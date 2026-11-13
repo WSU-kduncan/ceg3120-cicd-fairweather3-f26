@@ -133,9 +133,12 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 
 ---
 
-Documentation Stuffs
+### Part 2 Version of Workflow File (Permalink)
+`https://github.com/WSU-kduncan/ceg3120-cicd-fairweather3-f26/blob/6da1e081743acd00ae319ecf2f920e69e81f8dc4/.github/workflows/docker-publish.yml`
 
-- Link to the Part 2 version of workflow file, using a commit permalink (file on `main` will change later)
+---
+
+Documentation Stuffs
 
 3. Testing & Validation
     - How to test that the workflow did its tasking
