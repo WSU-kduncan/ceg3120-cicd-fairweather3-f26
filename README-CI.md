@@ -25,19 +25,17 @@ Lastly, please make the website appear modern. Make sure text sizing looks good 
 ---
 `https://hub.docker.com/repository/docker/nfairweather93/count-up/general`
 
-### Docker Image and Website running on LocalHost (LocalRun Screenshots)
----
+## Docker Image and Website running on LocalHost (LocalRun Screenshots)
 
-`docker ps` running the docker image provided at my repository listed above.
----
+**`docker ps` running the docker image provided at my repository listed above.**
 ![Docker ps](./Images/Docker-ps-proof.png)
 
-Both HTML webpages running on `localhost:8080` 
----
+**Both HTML webpages running on `localhost:8080`** 
 ![First webpage](./Images/Website1.png)
 ![Second Webpage](./Images/Website2.png)
 
 ### Purpose of web-content items
+---
 - [index.html](./web-content/index.html) is the landing page of the website, with a simple button to move the page to [counter.html](./web-content/counter.html)
 - [counter.html](./web-content/counter.html) is the second page of the site. It has a number in the middle that can be incremented up or down, one at a time. Also, there is a label to move back to the home screen.
 - [functionality.js](./web-content/functionality.js) is a javascript file used to control the buttons in counter.html so that they actually increment the number on the page.
@@ -47,7 +45,7 @@ Both HTML webpages running on `localhost:8080`
     - `COPY . /usr/local/apache2/htdocs/` to take everything in the current folder (which should be web-content) and put it in Apache's root inside of the created image, which should make those files run (clearly bc I can see it running).
 
 ### How to get it running
-
+---
 The Docker Image is stored in this repository:
 `https://hub.docker.com/repository/docker/nfairweather93/count-up/general`
 
