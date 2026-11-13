@@ -134,7 +134,7 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 ---
 
 ### Part 2 Version of Workflow File (Permalink)
-`https://github.com/WSU-kduncan/ceg3120-cicd-fairweather3-f26/blob/6da1e081743acd00ae319ecf2f920e69e81f8dc4/.github/workflows/docker-publish.yml`
+`https://github.com/WSU-kduncan/ceg3120-cicd-fairweather3-f26/blob/520ca6ee960477b9f89adb49ab127b530e8d9aa6/.github/workflows/docker-publish.yml`
 
 ---
 
@@ -173,16 +173,16 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 - Resources (just the ones from the lab):
     - `https://docs.docker.com/build/ci/github-actions/manage-tags-labels/`
     - `https://github.com/docker/metadata-action?tab=readme-ov-file#semver`
-1. git tags created for commits:
+1. **git tags created for commits:**
     - How to see the tags in a git repository:
     - How to generate a tag in a git repository:
     - How to push a tag in a git repository to GitHub:
-2. Semantic Versioning Container Images with GitHub Actions:
+2. **Semantic Versioning Container Images with GitHub Actions:**
     - Workflow Trigger
     - Workflow Steps
     - Values that need updated
     - Link to workflow file
-3. Testing & Validation
+3. **Testing & Validation**
     - Test that it did tasking
     - Verify the image in DockerHub works
     - Link to DockerHub repo with evidence of tag being set
