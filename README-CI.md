@@ -139,7 +139,10 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 ---
 
 3. Testing & Validation
-- Successful Workflow
+- If a workflow was successful, it should show on GitHub's actions tab. 
+    - Created a changed in [index.html](./web-content/index.html), committed and pushed that changed to `main`
+    - That change was validated in GitHub (unlike my first one, whoops) as seen in the image below.
+    - ![Action with SHA](./Images/SuccessfulAction.png)
 
 Documentation Stuffs
 
@@ -153,7 +156,6 @@ Documentation Stuffs
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
 
 ## Images
-- [ ] Main Trigger - A successful workflow run from a push to `main`, with the commit SHA visible.
 - [ ] Branch Negative Test - Push a commit to a branch other than `main`, and show the commit on that branch and that no workflow run started
 - [ ] Change to image - change visible text on your site and push it to `main`. After the workflow succeeds, pull and run the new image and show the change in a browser.
 - [ ] Tag trigger - `git tag -l` output, and a successful workflow run with a tag as its event.
