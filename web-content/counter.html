@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter | Count Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="title-bar">
+    <h1 class="title-bar__title">Count!</h1>
+  </header>
+
+  <main class="page">
+    <section class="counter" aria-label="Counter">
+      <output id="counter-value" class="counter__value" aria-live="polite">0</output>
+
+      <div class="counter__controls">
+        <button id="decrease" class="button button--round" type="button" aria-label="Count down">&minus;</button>
+        <button id="increase" class="button button--round button--primary" type="button" aria-label="Count up">+</button>
+      </div>
+
+      <a class="link" href="index.html">Back to home</a>
+    </section>
+  </main>
+
+  <script src="functionality.js"></script>
+</body>
+</html>
