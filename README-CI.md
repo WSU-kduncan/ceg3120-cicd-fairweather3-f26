@@ -115,17 +115,28 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
     - `nfairweather93/count-up:(sha)`: permanent tag named after the commit SHA. Should let every image be pointed back to the commit that built it.
 
 ---
+## If this is reused in a different repo
+*If a different repository is used*:
+
+### Changes in workflow file
+| Value | Current Value | Change it to |
+|---|---|---|
+| `branches:` | `main` | The name of whatever default branch a different repo may have (like *master*, for instance) |
+| Image name in `tags:` | `count-up`| If pushing to a different repo, change the name of the DockerHub repo in tags |
+|`context:` | `.` (which should be the web-content folder) | Change to wherever the Dockerfile and website files are located |
+| Versions | `@v6`, `@v4`, `@v4`, `@v7` | Check marketplace pages for newer release versions |
 
 ### Changes in Repo
-
-a
+- New Repository Secrets would need created.
+    - `DOCKER_USERNAME` would need set to the DockerHub username that owns the target repo
+    - `DOCKER_TOKEN` would need set to a PAT with R/W permissions.
 
 ---
-Documentation stuff to fill in
-updated if used in a different repo
-        - Changes in workflow
-        - Changes in repo
-    - Link to the Part 2 version of workflow file, using a commit permalink (file on `main` will change later)
+
+Documentation Stuffs
+
+- Link to the Part 2 version of workflow file, using a commit permalink (file on `main` will change later)
+
 3. Testing & Validation
     - How to test that the workflow did its tasking
     - How to verify that the image in DockerHub works when a container is run using the image
