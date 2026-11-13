@@ -85,15 +85,22 @@ The repo secrets are `DOCKER_USERNAME` and `DOCKER_TOKEN`. The first of those va
     - `https://docs.github.com/en/actions/tutorials/use-containerized-services/create-a-docker-container-action`
     - `https://docs.docker.com/build/ci/github-actions/`
 
+[docker-publish.yml](/.github/workflows/docker-publish.yml) creates a GitHub actions workflow to build my website's docker image and push it to DockerHub.
 
+---
 
+### Workflow Trigger
+```yaml
+on:
+  push:
+    branches:
+      - main
+```
+The workflow should only run when a commit is pushed to `main`. Pushes to other branches should not trigger it because of this.
 
+### Workflow Steps
+---
 
-3. Set up a GitHub Actions workflow to build and push container images to your DockerHub repository.
-    - Workflow shall trigger when a commit is pushed to the `main` branch (and only main)
-    - Workflow shall utilize repository secrets for authentication
-    - Workflow shall utilize `actions` as opposed to run commands
-        - `actions` should be verified by GitHub as an official partner organization and should utilize the most up to date action version
 
 ---
 Documentation stuff to fill in
