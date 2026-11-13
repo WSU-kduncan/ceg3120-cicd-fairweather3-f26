@@ -1,7 +1,19 @@
 # Nathan Fairweather
----
 
 # Part 4 - Project Description & Diagram
+
+## Project Goal
+
+Project 6 aims to automate building and publishing a containerized website (the same one from project 5) to a DockerHub image. Instead of manually running Docker commands, tags are created in Git, and GitHub actions uses those to build a Docker image and publish it to DockerHub, through the use of repository secrets.
+
+## Tools and Such
+| Tool           | Why |
+|----------------|-----|
+| Git            ||
+| GitHub         ||
+| GitHub Actions ||
+| Docker         ||
+| DockerHub      ||
 
 # Part 1 - Create a Docker container image
 
