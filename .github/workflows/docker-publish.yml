@@ -1,0 +1,38 @@
+# actions workflow to build and push an image to dockerhub
+# not sure the exact formatting of this, so I'm just gonna space stuff out and try to make it readable
+name: Build / Push to DockerHub
+
+# Should only be triggered on main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-push-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+      # Should use the repo secrets that I put in before
+      - name: DockerHub login
+        uses: docker/login-action@v4
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      
+      - name: Set up Docker Build
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build / Push
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/count-up:latest
+            ${{ secrets.DOCKER_USERNAME }}/count-up:${{ github.sha }}
+          # Latest tag for docker pull to get
+          # second tag for testing & validation
+
+
