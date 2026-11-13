@@ -138,6 +138,9 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 
 ---
 
+3. Testing & Validation
+- Successful Workflow
+
 Documentation Stuffs
 
 3. Testing & Validation

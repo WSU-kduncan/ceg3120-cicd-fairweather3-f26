@@ -27,7 +27,7 @@ jobs:
       - name: Build / Push
         uses: docker/build-push-action@v7
         with:
-          context: .
+          context: ./web-content/
           push: true
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/count-up:latest
