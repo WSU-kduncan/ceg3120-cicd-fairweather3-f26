@@ -162,6 +162,13 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 
 --- 
 
+- Other branch push testing
+    - Below is a push from a `testing` branch, which does not start a workflow action.
+    - ![push image](./Images/otherbranch_push.png)
+
+
+--- 
+
 # Part 3 - Semantic Versioning
 
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
