@@ -98,8 +98,17 @@ on:
 ```
 The workflow should only run when a commit is pushed to `main`. Pushes to other branches should not trigger it because of this.
 
-### Workflow Steps
 ---
+
+### Workflow Steps
+The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I believe each step should be running with an action as they should from a publisher (like *actions/* or *docker/*) instead of using a shell command.
+
+| Actual Step          | Command                         | Purpose |
+| ---------------------| ------------------------------- | ------- |
+| Checkout Repo        | `actions/checkout@v6`           | Clone the repo onto ubuntu-latest so that the Dockerfile and website can build|
+| DockerHub Login      | `docker/login-action@v4`        | Use repo secrets (`DOCKER_USERNAME` + `DOCKER_TOKEN`) to authenticate to DockerHub |
+| Set up Docker Buildx | `docker/setup-buildx-action@v4` | Set up Buildx, which docker can use to build the image |
+| Build / PUsh Image   | `docker/build-push-action@v7`   | Builds the image from the Dockerfile (`context: .`) and pushes it to DockerHub (with two tags set) |
 
 
 ---
