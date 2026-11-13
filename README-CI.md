@@ -1,4 +1,4 @@
-# Nathan Fairweather
+# Nathan Fairweather (Project 6, CEG3120)
 
 # Part 4 - Project Description & Diagram
 
@@ -37,7 +37,25 @@ flowchart LR
         L --> M["4. sets up buildx"]
         M --> N["5. build-push-action builds and pushes the image"]
     end
+
+    subgraph DOCKERHUB["DockerHub: nfairweather93/count-up"]
+        direction TB
+        O["Image pushed"] --> P["latest -> v1.1.0"]
+        O --> Q["1 -> v1.1.0"]
+        O --> R["1.1 -> v1.1.0"]
+        S["1.0 -> v1.0.0 (unchanged)"]
+    end
+
+    E --> F
+    N --> O
+    O -.-> T["docker pull / run from anywhere"]
 ```
+**Summarizing this in case my flow chart makes no sense.**
+- Developer changes code and pushes with a tag
+    - GitHub receives that tag and triggers the workflow
+    - Workflow builds the image and pushes it to DockerHub
+        - It is pushed under latest, major.minor tag.
+    - Previous major.minor tags are not touched so you can roll back to old releases if needed.
 
 # Part 1 - Create a Docker container image
 
