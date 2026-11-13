@@ -9,11 +9,11 @@ Project 6 aims to automate building and publishing a containerized website (the 
 ## Tools and Such
 | Tool           | Why |
 |----------------|-----|
-| Git            ||
-| GitHub         ||
-| GitHub Actions ||
-| Docker         ||
-| DockerHub      ||
+| Git            | Used for local version control. Also can be used to create needed tags |
+| GitHub         | Hosts the repo and stores repository's secrets that can hold DockerHub information|
+| GitHub Actions | Runs the workflow (`.github/workflows/docker-publish.yml`) when a version tag is actually pushed |
+| Docker         | Defines the image that the web files can run from |
+| DockerHub      | Application holding the published images (`nfairweather93/count-up`) |
 
 # Part 1 - Create a Docker container image
 
