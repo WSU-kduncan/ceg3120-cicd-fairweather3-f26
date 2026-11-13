@@ -1,20 +1,29 @@
 # Nathan Fairweather
-
 ---
+
 # Part 4 - Project Description & Diagram
----
 
----
 # Part 1 - Create a Docker container image
----
 
----
+- The website located in [web-content](./web-content/) was "developed" using AI (Claude), as per the instructions (and is also the same one that I used in project 5). Once again, the prompt I used is as follows:
+```
+You are a senior full-stack developer. Create a simple website that contains the following:
+
+- index.html, an html file representing the landing page of the website. The landing page for a cite titled "count up"
+- counter.html, a second web page containing a counter in the middle of the screen, with two buttons to count a shown value up or down.
+- style.css, the style for every page on the cite. The color scheme should be a simple and grayscale, but not too dark
+- functionality.js, a javascript program that handles the functionality of the page, such as the counter in counter.html
+
+The page should contain simple navigation: The homescreen can navigate to the counter, the counter can navigate back to the homescreen
+
+Add a title bar to the page that stays consistent across both html scripts. It should have the title "Count!"
+
+Lastly, please make the website appear modern. Make sure text sizing looks good and give me all of the scripts listed with their given parameters.
+```
+
 # Part 2 - GitHub Actions and DockerHub
----
 
----
 # Part 3 - Semantic Versioning
----
 
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
 
