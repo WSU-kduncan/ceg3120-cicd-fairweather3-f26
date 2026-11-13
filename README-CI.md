@@ -123,7 +123,7 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 |---|---|---|
 | `branches:` | `main` | The name of whatever default branch a different repo may have (like *master*, for instance) |
 | Image name in `tags:` | `count-up`| If pushing to a different repo, change the name of the DockerHub repo in tags |
-|`context:` | `.` (which should be the web-content folder) | Change to wherever the Dockerfile and website files are located |
+|`context:` | `./web-content/` (which should be the web-content folder) | Change to wherever the Dockerfile and website files are located |
 | Versions | `@v6`, `@v4`, `@v4`, `@v7` | Check marketplace pages for newer release versions |
 
 ### Changes in Repo
