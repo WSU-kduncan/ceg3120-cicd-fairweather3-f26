@@ -176,6 +176,8 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 1. **Git tags created for commits:**
     - How to see the tags in a git repository:
         - `git tag` lists locally stored tags, or `git tag -l` can be used to filter tags.
+        - Below is an example of the `git tag -l` command being ran
+            - ![tag command](./Images/git_tag_command.png)
     - How to generate a tag in a git repository:
         -   ```bash
             git tag -a vx.x.x -m "First Release"
@@ -218,16 +220,18 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
     - Test steps to validate tasking:
         1. Push a tag
             - `git push origin v1.1.0`
+        2. Open the repo's *Actions* tab. A run should appear for the tag that was set, and the green check mark should eventually show.
+        3. The Docker MetaData step can be expanded to show the generated tags.
+        4. On DockerHub, open the tags tab and confirm that they also appear.
+            - `https://hub.docker.com/repository/docker/nfairweather93/count-up/tags`
+            - Tags tab with the newly added tags showing
     - DockerHub Repo's Tags:
         - ![DockerHub repo with tags](./Images/dockerhub_tags.png)
-
-    - Link to DockerHub repo with evidence of tag being set
+    - Tags listed inside of the job in the GitHub actions tab:
+        - ![Actions Tags](./Images/MoreTags.png)
 
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
 
 ## Images
-- [ ] Tag trigger - `git tag -l` output, and a successful workflow run with a tag as its event.
-- [ ] Tag negative test - push a commit without a tag, and show the commit and that no workflow run started.
-- [ ] Tag set - your DockerHub repo's tags showing `latest`, `major`, and `major.minor`.
 - [ ] Two Releases - After your second release, your DockerHub tags and digests showing that 1 and latest moved to the new image while 1.0 stayed on the old image.
 - [ ] Rollback - run containers from your `major.minor` tags and show in a browser that each server its version of the site.
