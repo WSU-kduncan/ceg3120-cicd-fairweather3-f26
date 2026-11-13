@@ -37,6 +37,20 @@ Both HTML webpages running on `localhost:8080`
 ![First webpage](./Images/Website1.png)
 ![Second Webpage](./Images/Website2.png)
 
+### Purpose of web-content items
+- [index.html](./web-content/index.html) is the landing page of the website, with a simple button to move the page to [counter.html](./web-content/counter.html)
+- [counter.html](./web-content/counter.html) is the second page of the site. It has a number in the middle that can be incremented up or down, one at a time. Also, there is a label to move back to the home screen.
+- [functionality.js](./web-content/functionality.js) is a javascript file used to control the buttons in counter.html so that they actually increment the number on the page.
+- [style.css](./web-content/style.css) is the style for both of the html pages (colors, fonts, margins, etc...)
+- [Dockerfile](./web-content/Dockerfile) helps build the Docker Image. It serves two purposes:
+    - `FROM httpd:2.4` to start the apache web server image
+    - `COPY . /usr/local/apache2/htdocs/` to take everything in the current folder (which should be web-content) and put it in Apache's root inside of the created image, which should make those files run (clearly bc I can see it running).
+
+### How to get it running
+
+The Docker Image is stored in this repository:
+`https://hub.docker.com/repository/docker/nfairweather93/count-up/general`
+
 # Part 2 - GitHub Actions and DockerHub
 
 # Part 3 - Semantic Versioning
