@@ -138,18 +138,26 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 
 ---
 
-3. Testing & Validation
+3. **Testing & Validation**
 - If a workflow was successful, it should show on GitHub's actions tab. 
     - Created a changed in [index.html](./web-content/index.html), committed and pushed that changed to `main`
     - That change was validated in GitHub (unlike my first one, whoops) as seen in the image below.
     - ![Action with SHA](./Images/SuccessfulAction.png)
-
-Documentation Stuffs
-
-3. Testing & Validation
-    - How to test that the workflow did its tasking
-    - How to verify that the image in DockerHub works when a container is run using the image
-    - Link to DockerHub Repo
+- To verify that the image is running correctly:
+    - Remove old images:
+        - `docker rmi nfairweather93/count-up:latest`
+    - Pull the updated image:
+        - `docker pull nfairweather93/count-up:latest`
+    - Start the container:
+        - `docker run -d --name count-up-test -p 8080:80 nfairweather93/count-up:latest`
+    - Check to see if the container is running:
+        - `docker ps`
+    - Check for the changes:
+        - *http://localhost:8080*
+        - If the website reflects the most recent push, it is working, as seen below.
+        - ![Website Working](./Images/WebsiteChanges.png)
+  
+ - Link to DockerHub Repo
 
 # Part 3 - Semantic Versioning
 
