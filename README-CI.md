@@ -21,6 +21,22 @@ Add a title bar to the page that stays consistent across both html scripts. It s
 Lastly, please make the website appear modern. Make sure text sizing looks good and give me all of the scripts listed with their given parameters.
 ```
 
+### DockerHub Repository for the Website
+---
+`https://hub.docker.com/repository/docker/nfairweather93/count-up/general`
+
+### Docker Image and Website running on LocalHost (LocalRun Screenshots)
+---
+
+`docker ps` running the docker image provided at my repository listed above.
+---
+![Docker ps](./Images/Docker-ps-proof.png)
+
+Both HTML webpages running on `localhost:8080` 
+---
+![First webpage](./Images/Website1.png)
+![Second Webpage](./Images/Website2.png)
+
 # Part 2 - GitHub Actions and DockerHub
 
 # Part 3 - Semantic Versioning
@@ -28,7 +44,7 @@ Lastly, please make the website appear modern. Make sure text sizing looks good 
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
 
 ## Images
-- [ ] Local Run - `Docker ps` showing the container running, and a browser showing both of your pages with your CSS applied.
+- [x] Local Run - `Docker ps` showing the container running, and a browser showing both of your pages with your CSS applied.
 - [ ] Repository secrets - your repository's Actions secrets page showing `DOCKER_USERNAME` and `DOCKER_TOKEN`. Secret values are not displayed, never show or commit them.
 - [ ] Main Trigger - A successful workflow run from a push to `main`, with the commit SHA visible.
 - [ ] Branch Negative Test - Push a commit to a branch other than `main`, and show the commit on that branch and that no workflow run started
