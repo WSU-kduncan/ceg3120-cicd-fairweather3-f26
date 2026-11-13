@@ -175,8 +175,17 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
     - `https://github.com/docker/metadata-action?tab=readme-ov-file#semver`
 1. **git tags created for commits:**
     - How to see the tags in a git repository:
+        - `git tag` lists locally stored tags, or `git tag -l` can be used to filter tags.
     - How to generate a tag in a git repository:
+        -   ```bash
+            git tag -a vx.x.x -m "First Release"
+            ```
+        - (where **vx.x.x** represents a version number, such as v1.0.0)
     - How to push a tag in a git repository to GitHub:
+        -   ```bash
+            git push origin v1.0.0 #for a single tag
+            git push origin --tags # for multiple tags that are stored locally
+            ```
 2. **Semantic Versioning Container Images with GitHub Actions:**
     - Workflow Trigger
     - Workflow Steps
