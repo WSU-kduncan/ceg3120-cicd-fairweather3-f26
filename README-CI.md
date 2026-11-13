@@ -174,7 +174,6 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
 
 ## Images
-- [ ] Branch Negative Test - Push a commit to a branch other than `main`, and show the commit on that branch and that no workflow run started
 - [ ] Tag trigger - `git tag -l` output, and a successful workflow run with a tag as its event.
 - [ ] Tag negative test - push a commit without a tag, and show the commit and that no workflow run started.
 - [ ] Tag set - your DockerHub repo's tags showing `latest`, `major`, and `major.minor`.
