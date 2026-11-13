@@ -203,12 +203,24 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
             - Set up dockerbuildx for building 
         5. *Build / Push* (`docker/build-push-action@v7`):
             - builds the image from `web-content` and pushes it with the tags it makes.
-        
-    - Values that need updated
-    - Link to workflow file
+    - Values to update in a different repo:
+        1. Workflow:
+            - `images: nfairweather93/count-up` would need changed to the correct DockerHub username and repository
+            - `context: ./web-content/` would need changed to the local location holding the Dockerfile and web files
+            - `'v*.*.*` could also need changed if tags are using a different format
+        2. Repository:
+            - `DOCKER_USERNAME` and `DOCKER_TOKEN` repository secrets would need created in a different repo.
+    - Workflow File: [File is located here](./.github/workflows/docker-publish.yml)
+
+---
+
 3. **Testing & Validation**
-    - Test that it did tasking
-    - Verify the image in DockerHub works
+    - Test steps to validate tasking:
+        1. Push a tag
+            - `git push origin v1.1.0`
+    - DockerHub Repo's Tags:
+        - ![DockerHub repo with tags](./Images/dockerhub_tags.png)
+
     - Link to DockerHub repo with evidence of tag being set
 
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
