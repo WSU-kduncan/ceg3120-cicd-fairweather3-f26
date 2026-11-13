@@ -21,8 +21,8 @@ jobs:
         with:
           images: nfairweather93/count-up
           tags: |
-            type=semvar,pattern={{major}}
-            tpye=semvar,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            tpye=semver,pattern={{major}}.{{minor}}
 
       # Should use the repo secrets that I put in before
       - name: DockerHub login
