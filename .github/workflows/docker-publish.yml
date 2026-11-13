@@ -2,11 +2,11 @@
 # not sure the exact formatting of this, so I'm just gonna space stuff out and try to make it readable
 name: Build / Push to DockerHub
 
-# Should only be triggered on main
+# Instead of only triggering on main, only trigger when a semantic version tag is pushed
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*.*.*'
 
 jobs:
   build-push-jobs:
@@ -14,6 +14,16 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v6
+      # Generate image tags
+      - name: Docker MetaData
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: nfairweather93/count-up
+          tags: |
+            type=semvar,pattern={{major}}
+            tpye=semvar,pattern={{major}}.{{minor}}
+
       # Should use the repo secrets that I put in before
       - name: DockerHub login
         uses: docker/login-action@v4
@@ -29,10 +39,5 @@ jobs:
         with:
           context: ./web-content/
           push: true
-          tags: |
-            ${{ secrets.DOCKER_USERNAME }}/count-up:latest
-            ${{ secrets.DOCKER_USERNAME }}/count-up:${{ github.sha }}
-          # Latest tag for docker pull to get
-          # second tag for testing & validation
-
-
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
