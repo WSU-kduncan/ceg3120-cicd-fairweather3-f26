@@ -61,6 +61,34 @@ With that, starting it was really easy.
 
 # Part 2 - GitHub Actions and DockerHub
 
+1. Create an appropriately scoped Personal Access Token for GitHub Actions to use and access DockerHub repository.
+
+2. In GitHub repo, configure GitHub Action Secrets named `DOCKER_USERNAME` and `DOCKER_TOKEN` containing DockerHub username & DockerHub access token, respectively.
+
+3. Set up a GitHub Actions workflow to build and push container images to your DockerHub repository.
+    - Workflow shall trigger when a commit is pushed to the `main` branch (and only main)
+    - Workflow shall utilize repository secrets for authentication
+    - Workflow shall utilize `actions` as opposed to run commands
+        - `actions` should be verified by GitHub as an official partner organization and should utilize the most up to date action version
+
+---
+Documentation stuff to fill in
+1. Configure GitHub Repository Secrets:
+    - How to create a PAT for authentication (and recommend PAT scope for this project)
+    - How to set up secrets for use by GitHub actions
+    - Describe the Secrets set in this project
+2. CI with GitHub Actions
+    - Explanation of workflow trigger
+    - Explanation of workflow steps
+    - Explanation / Highlight of values that need updated if used in a different repo
+        - Changes in workflow
+        - Changes in repo
+    - Link to the Part 2 version of workflow file, using a commit permalink (file on `main` will change later)
+3. Testing & Validation
+    - How to test that the workflow did its tasking
+    - How to verify that the image in DockerHub works when a container is run using the image
+    - Link to DockerHub Repo
+    
 # Part 3 - Semantic Versioning
 
 # Extra stuff that needs to be in here so I don't forget it and don't know where it goes yet
