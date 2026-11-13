@@ -157,7 +157,10 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
         - If the website reflects the most recent push, it is working, as seen below.
         - ![Website Working](./Images/WebsiteChanges.png)
   
- - Link to DockerHub Repo
+- Link to DockerHub Repo:
+`https://hub.docker.com/repository/docker/nfairweather93/count-up/general`
+
+--- 
 
 # Part 3 - Semantic Versioning
 
@@ -165,7 +168,6 @@ The workflow should run only one job (`build-push-jobs`) on `ubuntu-latest`. I b
 
 ## Images
 - [ ] Branch Negative Test - Push a commit to a branch other than `main`, and show the commit on that branch and that no workflow run started
-- [ ] Change to image - change visible text on your site and push it to `main`. After the workflow succeeds, pull and run the new image and show the change in a browser.
 - [ ] Tag trigger - `git tag -l` output, and a successful workflow run with a tag as its event.
 - [ ] Tag negative test - push a commit without a tag, and show the commit and that no workflow run started.
 - [ ] Tag set - your DockerHub repo's tags showing `latest`, `major`, and `major.minor`.
